@@ -16,7 +16,6 @@
 				0,
 				0
 			],
-			"loop": false,
 			"fps": 24,
 			"anim": "idle",
 			"indices": [],
@@ -31,17 +30,6 @@
 			"fps": 24,
 			"name": "Up",
 			"indices": []
-		},
-		{
-			"offsets": [
-				-4,
-				-1
-			],
-			"anim": "singRIGHT",
-			"fps": 24,
-			"anim": "right",
-			"indices": [],
-			"name": "Right"
 		},
 		{
 			"offsets": [
@@ -95,6 +83,17 @@
 			"fps": 24,
 			"name": "SoupUp",
 			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "Right"
 		}
 	],
 	"no_antialiasing": false,
@@ -103,12 +102,12 @@
 		0,
 		90
 	],
-	"healthicon": "face",
+	"healthicon": "icon_tord",
 	"flip_x": false,
 	"healthbar_colors": [
-		161,
-		161,
-		161
+		255,
+		0,
+		0
 	],
 	"camera_position": [
 		-10,
