@@ -3,6 +3,17 @@
 		{
 			"loop": false,
 			"offsets": [
+				2,
+				-11
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
 				0,
 				0
 			],
@@ -14,21 +25,21 @@
 		{
 			"loop": false,
 			"offsets": [
-				130,
-				-92
+				-12,
+				24
 			],
-			"anim": "left",
+			"anim": "singUP",
 			"fps": 24,
-			"name": "Left",
+			"name": "Up",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				28,
-				-79
+				-4,
+				-1
 			],
-			"anim": "right",
+			"anim": "singRIGHT",
 			"fps": 24,
 			"name": "Right",
 			"indices": []
@@ -36,87 +47,76 @@
 		{
 			"loop": false,
 			"offsets": [
-				63,
-				-79
+				-6,
+				0
 			],
-			"anim": "down",
+			"anim": "singLEFT",
 			"fps": 24,
-			"name": "Down",
+			"name": "Left",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				93,
-				55
+				3,
+				-187
 			],
-			"anim": "up",
+			"anim": "singDOWN-alt",
 			"fps": 24,
-			"name": "Up",
+			"name": "SoupDown",
 			"indices": []
 		},
 		{
-			"offsets": [
-				0,
-				0
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "soupup",
 			"loop": false,
-			"name": "SoupUp"
+			"offsets": [
+				50,
+				-90
+			],
+			"anim": "singLEFT-alt",
+			"fps": 24,
+			"name": "SoupLeft",
+			"indices": []
 		},
 		{
-			"offsets": [
-				0,
-				0
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "soupdown",
 			"loop": false,
-			"name": "SoupDown"
+			"offsets": [
+				-9,
+				-69
+			],
+			"anim": "singRIGHT-alt",
+			"fps": 24,
+			"name": "SoupRIght",
+			"indices": []
 		},
 		{
-			"offsets": [
-				0,
-				0
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "soupright",
 			"loop": false,
-			"name": "SoupRIght"
-		},
-		{
 			"offsets": [
-				0,
-				0
+				80,
+				53
 			],
-			"indices": [],
+			"anim": "singUP-alt",
 			"fps": 24,
-			"anim": "soupleft",
-			"loop": false,
-			"name": "SoupLeft"
+			"name": "SoupUp",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/Tord-FLA",
 	"position": [
-		-360,
-		290
+		0,
+		90
 	],
-	"healthicon": "bf",
+	"healthicon": "face",
 	"flip_x": false,
 	"healthbar_colors": [
-		49,
-		176,
-		209
+		161,
+		161,
+		161
 	],
 	"camera_position": [
-		0,
+		-10,
 		0
 	],
-	"sing_duration": 4,
+	"sing_duration": 6.1,
 	"scale": 1
 }
