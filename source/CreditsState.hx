@@ -81,6 +81,22 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
+			
+			['(Yet another) tord mod team'],
+			['ImBurger',	'burger',	'Director, Main Animator',	'https://twitter.com/MBorgor',	'0000FF'],
+			['TzenZoule',	'tzenzoule', 'Credtis,Tord Icons,Creator of coolbf',	'https://twitter.com/AbZoule',	'E64056'],
+			['Kalpy', 'kalpy',	'Musician,Charter',	'https://twitter.com/Kalpy19', '808080'],
+			['Orbyy', 'orbyyorbinaut',	'Charter',	'https://twitter.com/OrbyyNew', 'D3D3D3'],
+			['PenKaru', 'penkaru',	'Musician', 'https://twitter.com/pex_ton', '6E6C6C'],
+			['MindOfTheEye', 'mindoftheeye',	'Musician', 'https://twitter.com/MindoftheEye1', '1E1B1B'],
+			['HugeNate', 'hugenate',	'Musician', 'https://twitter.com/HugeNate_', '00FFBC'],
+			['Creepercrunch','creepercrunch','Musician, Bg Artist', 'https://twitter.com/creepercrunch', '00FF3C'],
+			['Vibe', 'vibe', 'Coder', 'https://twitter.com/Vibe_67', '301934'],
+			['Scatt', 'scatt', 'logo creator, cameo artist', 'https://twitter.com/Scatt70857891', '3730F9'],
+			['JustJack', 'JustJack', 'How help with some code', 'https://twitter.com/Just_Jack6', 'FAFFFF'],
+
+
+
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',							'https://twitter.com/Shadow_Mario_',	'444444'],
 			['RiverOaken',			'riveroaken',		'Main Artist/Animator of Psych Engine',						'https://twitter.com/RiverOaken',		'C30085'],
