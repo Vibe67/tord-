@@ -86,16 +86,15 @@ class CreditsState extends MusicBeatState
 			['ImBurger',	'burger',	'Director, Main Animator',	'https://twitter.com/MBorgor',	'0000FF'],
 			['TzenZoule',	'tzenzoule', 'Credtis,Tord Icons,Creator of coolbf',	'https://twitter.com/AbZoule',	'E64056'],
 			['Kalpy', 'kalpy',	'Musician,Charter',	'https://twitter.com/Kalpy19', '808080'],
-			['Orbyy', 'orbyyorbinaut',	'Charter',	'https://twitter.com/OrbyyNew', 'D3D3D3'],
+			['Orbyy', 'orbyyorbinaut',	'Charter',	'https://twitter.com/OrbyyNew', '7864FF'],
 			['PenKaru', 'penkaru',	'Musician', 'https://twitter.com/pex_ton', '6E6C6C'],
 			['MindOfTheEye', 'mindoftheeye',	'Musician', 'https://twitter.com/MindoftheEye1', '1E1B1B'],
 			['HugeNate', 'hugenate',	'Musician', 'https://twitter.com/HugeNate_', '00FFBC'],
-			['Creepercrunch','creepercrunch','Musician, Bg Artist', 'https://twitter.com/creepercrunch', '00FF3C'],
+			['Creepercrunch','creepercrunch','Musician, Bg Artist', 'https://twitter.com/creepercrunch', '37FF3E'],
 			['Vibe', 'vibe', 'Coder', 'https://twitter.com/Vibe_67', '301934'],
 			['Scatt', 'scatt', 'logo creator, cameo artist', 'https://twitter.com/Scatt70857891', '3730F9'],
-			['JustJack', 'JustJack', 'How help with some code', 'https://twitter.com/Just_Jack6', 'FAFFFF'],
-
-
+			['Maris', 'maris', 'Promo art', 'https://twitter.com/Marisgameplays', '8b43dc'],
+			['JustJack', 'JustJack', 'Help with code', 'https://twitter.com/Just_Jack6', 'FAFFFF'],
 
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',							'https://twitter.com/Shadow_Mario_',	'444444'],

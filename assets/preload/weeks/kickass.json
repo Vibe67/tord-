@@ -1,0 +1,32 @@
+{
+	"songs": [
+		[
+			"kickass",
+			"icon_tord",
+			[
+				255,
+				0,
+				0
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"difficulties": "",
+	"weekCharacters": [
+		"Tord-FLA",
+		"bf",
+		"gf"
+	],
+	"storyName": "b",
+	"weekName": "",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": true,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}
