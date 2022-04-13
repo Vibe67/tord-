@@ -2,58 +2,71 @@
 	"animations": [
 		{
 			"offsets": [
-				-5,
-				0
+				50,
+				5
 			],
-			"loop": false,
+			"indices": [
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23
+			],
 			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "BF idle dance"
+			"loop": false,
+			"name": "BFCOOLIDLE"
 		},
 		{
 			"offsets": [
-				5,
-				-6
+				31,
+				17
 			],
-			"loop": false,
+			"indices": [],
 			"fps": 24,
 			"anim": "singLEFT",
+			"loop": false,
+			"name": "BFCOOLLEFT"
+		},
+		{
+			"offsets": [
+				-18,
+				-26
+			],
 			"indices": [],
-			"name": "BF NOTE LEFT0"
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "BFCOOLDOWN"
 		},
 		{
 			"offsets": [
 				-20,
-				-51
+				69
 			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singDOWN",
 			"indices": [],
-			"name": "BF NOTE DOWN0"
-		},
-		{
-			"offsets": [
-				-46,
-				27
-			],
-			"loop": false,
 			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
-			"name": "BF NOTE UP0"
+			"loop": false,
+			"name": "BFCOOLUP"
 		},
 		{
 			"offsets": [
-				-48,
-				-7
+				-37,
+				4
 			],
-			"loop": false,
+			"indices": [],
 			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "BF NOTE RIGHT0"
+			"loop": false,
+			"name": "BFCOOLRIGHT"
 		},
 		{
 			"offsets": [
@@ -79,7 +92,7 @@
 		},
 		{
 			"offsets": [
-				-46,
+				-36,
 				27
 			],
 			"loop": false,
@@ -101,18 +114,18 @@
 		},
 		{
 			"offsets": [
-				-3,
-				5
+				-29,
+				32
 			],
-			"loop": false,
+			"indices": [],
 			"fps": 24,
 			"anim": "hey",
-			"indices": [],
-			"name": "BF HEY"
+			"loop": false,
+			"name": "COOLHEY"
 		},
 		{
 			"offsets": [
-				14,
+				15,
 				18
 			],
 			"loop": false,
@@ -197,10 +210,21 @@
 			"anim": "pre-attack",
 			"indices": [],
 			"name": "bf pre attack"
+		},
+		{
+			"offsets": [
+				50,
+				5
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "mic",
+			"loop": false,
+			"name": "BFCOOLIDLE"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/BOYFRIEND",
+	"image": "characters/tzenbf",
 	"position": [
 		0,
 		350
