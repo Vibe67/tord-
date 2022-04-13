@@ -3,30 +3,30 @@
 	"difficulties": "",
 	"hideFreeplay": false,
 	"weekBackground": "stage",
-	"weekBefore": "tutorial",
 	"freeplayColor": [
 		146,
 		113,
 		253
 	],
+	"weekBefore": "tutorial",
 	"startUnlocked": true,
-	"hideStoryMode": true,
-	"songs": [
-		[
-			"tord",
-			"icon_tord",
-			[
-				146,
-				113,
-				253
-			]
-		]
-	],
 	"weekCharacters": [
 		"dad",
 		"bf",
 		"gf"
 	],
-	"hiddenUntilUnlocked": false,
-	"weekName": "Custom Week"
+	"songs": [
+		[
+			"tord",
+			"icon_tord",
+			[
+				255,
+				0,
+				0
+			]
+		]
+	],
+	"hideStoryMode": true,
+	"weekName": "Custom Week",
+	"hiddenUntilUnlocked": false
 }
