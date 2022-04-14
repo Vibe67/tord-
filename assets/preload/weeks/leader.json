@@ -1,32 +1,32 @@
 {
-	"songs": [
-		[
-			"leader",
-			"icon_tord",
-			[
-				180,
-				0,
-				0
-			]
-		]
-	],
-	"hiddenUntilUnlocked": false,
+	"storyName": "",
+	"difficulties": "",
 	"hideFreeplay": false,
 	"weekBackground": "stage",
-	"difficulties": "",
-	"weekCharacters": [
-		"tord-FLA",
-		"bf",
-		"gf"
-	],
-	"storyName": "",
-	"weekName": "Custom Week",
+	"weekBefore": "tutorial",
 	"freeplayColor": [
 		146,
 		113,
 		253
 	],
+	"startUnlocked": true,
 	"hideStoryMode": false,
-	"weekBefore": "tutorial",
-	"startUnlocked": true
+	"songs": [
+		[
+			"leader",
+			"icon_tord",
+			[
+				255,
+				0,
+				0
+			]
+		]
+	],
+	"weekCharacters": [
+		"tord-FLA",
+		"bf",
+		"gf"
+	],
+	"hiddenUntilUnlocked": false,
+	"weekName": "Custom Week"
 }

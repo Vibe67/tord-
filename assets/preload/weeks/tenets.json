@@ -3,30 +3,30 @@
 	"difficulties": "",
 	"hideFreeplay": false,
 	"weekBackground": "stage",
-	"weekBefore": "tutorial",
 	"freeplayColor": [
 		146,
 		113,
 		253
 	],
+	"weekBefore": "tutorial",
 	"startUnlocked": true,
-	"hideStoryMode": false,
-	"songs": [
-		[
-			"tanets",
-			"icon_tord",
-			[
-				146,
-				0,
-				0
-			]
-		]
-	],
 	"weekCharacters": [
 		"dad",
 		"bf",
 		"gf"
 	],
-	"hiddenUntilUnlocked": false,
-	"weekName": ""
+	"songs": [
+		[
+			"tanets",
+			"icon_tord",
+			[
+				255,
+				0,
+				0
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "",
+	"hiddenUntilUnlocked": false
 }
