@@ -502,7 +502,39 @@ class PlayState extends MusicBeatState
 				var street:BGSprite = new BGSprite('philly/street', -40, 50);
 				add(street);
 
-			case 'limo': //Week 4
+				case 'tord':
+
+					var skyBG:BGSprite = new BGSprite('bg/sky', -451, -354);
+					add(skyBG);
+				
+				var newb:BGSprite = new BGSprite('bg/buildings back', -300, -400);
+				add(newb)
+				
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			;case 'limo': //Week 4
 				var skyBG:BGSprite = new BGSprite('limo/limoSunset', -120, -50, 0.1, 0.1);
 				add(skyBG);
 
