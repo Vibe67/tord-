@@ -1,5 +1,6 @@
 package;
 
+import flixel.system.scaleModes.FixedScaleMode;
 import flixel.graphics.FlxGraphic;
 #if desktop
 import Discord.DiscordClient;
@@ -504,12 +505,17 @@ class PlayState extends MusicBeatState
 
 				case 'tord':
 
-					var skyBG:BGSprite = new BGSprite('bg/sky', -451, -354);
-					add(skyBG);
+					var skyBG:BGSprite = new BGSprite('bg/sky', -443, -354);
+					skyBG.scale.y = 0.80;
+					skyBG.scale.x = 0.80;
+					add(skyBG)
 				
-				var newb:BGSprite = new BGSprite('bg/buildings back', -300, -400);
+					;var newb:BGSprite = new BGSprite('bg/foreground', 0, 0);
+			add(newb);
+				
+			var newb:BGSprite = new BGSprite('bg/buildings back', -300, -400);
 				add(newb)
-				
+			
 
 			
 
