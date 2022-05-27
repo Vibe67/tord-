@@ -505,24 +505,24 @@ class PlayState extends MusicBeatState
 
 				case 'tord':
 
-					var skyBG:BGSprite = new BGSprite('bg/sky', -520, -354);
+					var skyBG:BGSprite = new BGSprite('bg/sky', -520, -340);
 					skyBG.scale.y = 0.80;
 					skyBG.scale.x = 0.80;
 					add(skyBG)
 
-			;var newb:BGSprite = new BGSprite('bg/buildings back', -530, 10);
-			newb.scale.y = 0.80;
-			newb.scale.x = 0.80;
+			;var newb:BGSprite = new BGSprite('bg/buildings back', -630, -200);
+			newb.scale.y = 0.99;
+			newb.scale.x = 0.99;
 			add(newb)
 	
-				 ;var newb:BGSprite = new BGSprite('bg/buildings front',-530, 10);
-				 newb.scale.y = 0.60;
-				 newb.scale.x = 0.60;
+				 ;var newb:BGSprite = new BGSprite('bg/buildings front',-630, -60);
+				 newb.scale.y = 0.99;
+				 newb.scale.x = 0.99;
 				 add(newb)
 
 					;var newb:BGSprite = new BGSprite('bg/foreground', -410, -390);
-					 newb.scale.y = 0.90;
-					 newb.scale.x = 0.90;
+					 newb.scale.y = .99;
+					 newb.scale.x = .99;
 			add(newb);
 
 			case 'limo': //Week 4

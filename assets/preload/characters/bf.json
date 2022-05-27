@@ -2,7 +2,7 @@
 	"animations": [
 		{
 			"offsets": [
-				0,
+				-5,
 				0
 			],
 			"loop": false,
@@ -24,8 +24,8 @@
 		},
 		{
 			"offsets": [
-				-10,
-				-50
+				-20,
+				-51
 			],
 			"loop": false,
 			"fps": 24,
@@ -35,7 +35,7 @@
 		},
 		{
 			"offsets": [
-				-29,
+				-46,
 				27
 			],
 			"loop": false,
@@ -79,7 +79,7 @@
 		},
 		{
 			"offsets": [
-				-36,
+				-46,
 				27
 			],
 			"loop": false,
@@ -112,7 +112,7 @@
 		},
 		{
 			"offsets": [
-				15,
+				14,
 				18
 			],
 			"loop": false,
@@ -200,10 +200,10 @@
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/tzenbf",
+	"image": "characters/BOYFRIEND",
 	"position": [
-		100,
-		160
+		20,
+		210
 	],
 	"healthicon": "bf",
 	"flip_x": true,
@@ -213,8 +213,8 @@
 		209
 	],
 	"camera_position": [
-		-60,
-		-80
+		0,
+		0
 	],
 	"sing_duration": 4,
 	"scale": 1
