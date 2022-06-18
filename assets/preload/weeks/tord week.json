@@ -1,6 +1,6 @@
 {
-	"storyName": "I'm UNSTOPPABLE AHAHAHAHA",
-	"difficulties": "",
+	"storyName": "",
+	"difficulties": "Hard",
 	"hideFreeplay": false,
 	"weekBackground": "stage",
 	"freeplayColor": [
@@ -11,7 +11,7 @@
 	"weekBefore": "tutorial",
 	"startUnlocked": true,
 	"weekCharacters": [
-		"dad",
+		"",
 		"bf",
 		"gf"
 	],
@@ -24,9 +24,27 @@
 				0,
 				0
 			]
+		],
+		[
+			"kickass",
+			"icon_tord",
+			[
+				255,
+				0,
+				0
+			]
+		],
+		[
+			"leader",
+			"icon_tord",
+			[
+				255,
+				0,
+				0
+			]
 		]
 	],
 	"hideStoryMode": false,
-	"weekName": "",
+	"weekName": "Custom Week",
 	"hiddenUntilUnlocked": false
 }
