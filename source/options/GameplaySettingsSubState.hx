@@ -56,6 +56,13 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			false);
 		addOption(option);
 
+		var option:Option = new Option('Directional Camera', //Name
+			'If checked, the camera moves with the focused character\'s directional animations.', //Description
+			'directionalCam', //Save data variable name
+			'bool', //Variable type
+			false); //Setting this to false because I'm pretty sure people dont want this on, unless if you're me -- Just Jack
+		addOption(option);
+
 		var option:Option = new Option('Ghost Tapping',
 			"If checked, you won't get misses from pressing keys\nwhile there are no notes able to be hit.",
 			'ghostTapping',

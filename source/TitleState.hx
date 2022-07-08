@@ -63,6 +63,9 @@ class TitleState extends MusicBeatState
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
 
+	var editable:Bool = true; // DEBUG THING
+	var lpo:Int = 700;
+
 	var curWacky:Array<String> = [];
 
 	var wackyImage:FlxSprite;
@@ -76,8 +79,6 @@ class TitleState extends MusicBeatState
 	#end
 
 	var mustUpdate:Bool = false;
-	
-	var titleJSON:TitleData;
 	
 	public static var updateVersion:String = '';
 
@@ -150,29 +151,7 @@ class TitleState extends MusicBeatState
 		ClientPrefs.loadPrefs();
 		
 		Highscore.load();
-
-		// IGNORE THIS!!!
-		titleJSON = Json.parse(Paths.getTextFromFile('images/gfDanceTitle.json'));
 		
-		#if TITLE_SCREEN_EASTER_EGG
-		if (FlxG.save.data.psychDevsEasterEgg == null) FlxG.save.data.psychDevsEasterEgg = ''; //Crash prevention
-		switch(FlxG.save.data.psychDevsEasterEgg.toUpperCase())
-		{
-			case 'SHADOW':
-				titleJSON.gfx += 210;
-				titleJSON.gfy += 40;
-			case 'RIVER':
-				titleJSON.gfx += 100;
-				titleJSON.gfy += 20;
-			case 'SHUBS':
-				titleJSON.gfx += 160;
-				titleJSON.gfy -= 10;
-			case 'BBPANZU':
-				titleJSON.gfx += 45;
-				titleJSON.gfy += 100;
-		}
-		#end
-
 		if(!initialized && FlxG.save.data != null && FlxG.save.data.fullscreen)
 		{
 			FlxG.fullscreen = FlxG.save.data.fullscreen;
@@ -251,23 +230,23 @@ class TitleState extends MusicBeatState
 			}
 		}
 
-		Conductor.changeBPM(titleJSON.bpm);
+		Conductor.changeBPM(102);
 		persistentUpdate = true;
 
 		var bg:FlxSprite = new FlxSprite();
 		
-		if (titleJSON.backgroundSprite != null && titleJSON.backgroundSprite.length > 0 && titleJSON.backgroundSprite != "none"){
+		/*if (titleJSON.backgroundSprite != null && titleJSON.backgroundSprite.length > 0 && titleJSON.backgroundSprite != "none"){
 			bg.loadGraphic(Paths.image(titleJSON.backgroundSprite));
 		}else{
 			bg.makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
-		}
+		}*/
 		
 		// bg.antialiasing = ClientPrefs.globalAntialiasing;
 		// bg.setGraphicSize(Std.int(bg.width * 0.6));
 		// bg.updateHitbox();
 		add(bg);
 
-		logoBl = new FlxSprite(-130, -120);
+		logoBl = new FlxSprite(7, -6);
 		logoBl.frames = Paths.getSparrowAtlas('todlogo');
 		
 		logoBl.antialiasing = ClientPrefs.globalAntialiasing;
@@ -289,7 +268,7 @@ class TitleState extends MusicBeatState
 		// logoBl.color = FlxColor.BLACK;
 
 		swagShader = new ColorSwap();
-		gfDance = new FlxSprite(-200, -100);
+		gfDance = new FlxSprite(328, -57);
 
 		var easterEgg:String = FlxG.save.data.psychDevsEasterEgg;
 		switch(easterEgg.toUpperCase())
@@ -318,17 +297,17 @@ class TitleState extends MusicBeatState
 			//EDIT THIS ONE IF YOU'RE MAKING A SOURCE CODE MOD!!!!
 			//EDIT THIS ONE IF YOU'RE MAKING A SOURCE CODE MOD!!!!
 				gfDance.frames = Paths.getSparrowAtlas('menuTord');
-				gfDance.animation.addByIndices('menuTord', 'menuTord', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], "", 24, false);
-				gfDance.animation.addByIndices('menuTord', 'menuTord', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				gfDance.animation.addByPrefix('menuTord', 'tordbop', 24, false);
 		}
 		gfDance.antialiasing = ClientPrefs.globalAntialiasing;
+		gfDance.setGraphicSize(Std.int(888.382));
 		
 		add(gfDance);
 		gfDance.shader = swagShader.shader;
 		add(logoBl);
 		logoBl.shader = swagShader.shader;
 
-		titleText = new FlxSprite(titleJSON.startx, titleJSON.starty);
+		titleText = new FlxSprite(100, 576);
 		#if (desktop && MODS_ALLOWED)
 		var path = "mods/" + Paths.currentModDirectory + "/images/titleEnter.png";
 		//trace(path, FileSystem.exists(path));
@@ -413,6 +392,62 @@ class TitleState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+		/*if (FlxG.keys.pressed.SHIFT && editable)
+			{
+				logoBl.x = FlxG.mouse.screenX;
+				logoBl.y = FlxG.mouse.screenY;
+			}
+		else if (FlxG.keys.justPressed.C && editable)
+			{
+				trace(logoBl);
+			}
+		else if (FlxG.keys.justPressed.E && editable)
+				{
+					if (FlxG.keys.pressed.ALT)
+						lpo += 100;
+					else
+						lpo += 15;
+					logoBl.setGraphicSize(Std.int(lpo));
+					logoBl.updateHitbox();
+				}
+		else if (FlxG.keys.justPressed.Q && editable)
+				{
+					if (FlxG.keys.pressed.ALT)
+						lpo -= 100;
+					else
+						lpo -= 15;
+					logoBl.setGraphicSize(Std.int(lpo));
+					logoBl.updateHitbox();
+				}
+		else if (FlxG.keys.justPressed.L && editable)
+				{
+					if (FlxG.keys.pressed.ALT)
+						logoBl.x += 50;
+					else
+						logoBl.x += 1;
+				}
+		else if (FlxG.keys.justPressed.K && editable)
+				{
+					if (FlxG.keys.pressed.ALT)
+						logoBl.y += 50;
+					else
+						logoBl.y += 1;
+				}
+		else if (FlxG.keys.justPressed.J && editable)
+				{
+					if (FlxG.keys.pressed.ALT)
+						logoBl.x -= 50;
+					else
+						logoBl.x -= 1;
+				}
+		else if (FlxG.keys.justPressed.I && editable)
+				{
+					if (FlxG.keys.pressed.ALT)
+						logoBl.y -= 50;
+					else
+						logoBl.y -= 1;
+				}*/
+
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
 		// FlxG.watch.addQuick('amp', FlxG.sound.music.amplitude);
@@ -573,11 +608,7 @@ class TitleState extends MusicBeatState
 			logoBl.animation.play('bump', true);
 
 		if(gfDance != null) {
-			danceLeft = !danceLeft;
-			if (danceLeft)
-				gfDance.animation.play('danceRight');
-			else
-				gfDance.animation.play('danceLeft');
+			gfDance.animation.play('menuTord');
 		}
 
 		if(!closedState) {

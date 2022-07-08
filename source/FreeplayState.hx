@@ -420,7 +420,7 @@ class FreeplayState extends MusicBeatState
 		#end
 
 		PlayState.storyDifficulty = curDifficulty;
-		diffText.text = '< ' + CoolUtil.difficultyString() + ' >';
+		diffText.text = CoolUtil.difficultyString();
 		positionHighscore();
 	}
 
