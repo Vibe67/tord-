@@ -68,7 +68,7 @@ class MainMenuState extends MusicBeatState
 		persistentUpdate = persistentDraw = true;
 
 		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
-		var bg:FlxSprite = new FlxSprite(80).loadGraphic(Paths.image('Checker'));
+		var bg:FlxSprite = new FlxSprite(80).loadGraphic(Paths.image('mainmenu/Checker'));
 		bg.scrollFactor.set(0, yScroll);
 		bg.setGraphicSize(Std.int(bg.width * 1.175));
 		bg.updateHitbox();
@@ -78,11 +78,41 @@ class MainMenuState extends MusicBeatState
 
 		var tord:FlxSprite = new FlxSprite(-490,-180).loadGraphic(Paths.image('mainmenu/Tord'));
 		tord.screenCenter(X);
-		tord.x += 290;
+		tord.x += 390;
 		tord.scale.y = 0.68;
 		tord.scale.x = 0.68;
 		tord.scrollFactor.set();
 		add(tord);
+
+
+		var tord_bg:FlxSprite = new FlxSprite(-490,-180).loadGraphic(Paths.image('mainmenu/Tord_BG'));
+		tord_bg.screenCenter();
+		tord_bg.x += 390;
+		tord.scale.y = 0.68;
+		tord.scale.x = 0.68;
+		tord_bg.scrollFactor.set();
+		add(tord_bg);
+
+		var tord_bg2:FlxSprite = new FlxSprite(0,0).loadGraphic(Paths.image('mainmenu/Layer_9'));
+		tord_bg2.scrennCenter();
+		tord_bg2.x +=100;
+		tord_bg2.scale.y = 0.10;
+		tord_bg2.scale.x = 0.10;
+		tord_bg2.scrollFactor.set();
+		add(tord_bg2);
+	
+		var tord_bg3:FlxSprite = new FlxSprite(0,0).loadGraphic(Paths.image('mainmenu/Layer_10'));
+		tord_bg3.screenCenter();
+		tord_bg3.x += 100;
+		tord_bg3.scale.y = 0.10;
+		tord_bg3.scale.x = 0.10;
+		tord_bg3.scrollFactor.set();
+		add(tord_bg3);
+
+
+
+
+
 
 
 		camFollow = new FlxObject(0, 0, 1, 1);
