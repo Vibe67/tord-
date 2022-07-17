@@ -94,23 +94,31 @@ class MainMenuState extends MusicBeatState
 		add(tord_bg);
 
 		var tord_bg2:FlxSprite = new FlxSprite(0,0).loadGraphic(Paths.image('mainmenu/Layer_9'));
-		tord_bg2.scrennCenter();
-		tord_bg2.x +=100;
-		tord_bg2.scale.y = 0.10;
-		tord_bg2.scale.x = 0.10;
+		tord_bg2.screenCenter();
+		tord_bg2.x +=10;
+		tord_bg2.scale.y = 0.80;
+		tord_bg2.scale.x = 0.80;
 		tord_bg2.scrollFactor.set();
 		add(tord_bg2);
 	
 		var tord_bg3:FlxSprite = new FlxSprite(0,0).loadGraphic(Paths.image('mainmenu/Layer_10'));
 		tord_bg3.screenCenter();
-		tord_bg3.x += 100;
-		tord_bg3.scale.y = 0.10;
-		tord_bg3.scale.x = 0.10;
+		tord_bg3.x +=10;
+		tord_bg3.scale.y = 0.80;
+		tord_bg3.scale.x = 0.80;
 		tord_bg3.scrollFactor.set();
 		add(tord_bg3);
 
 
 
+
+		var tord_bg4:FlxSprite = new FlxSprite(0,0).loadGraphic(Paths.image('mainmenu/THICC_OUTLINE'));
+		tord_bg4.screenCenter();
+		tord_bg4.x +=10;
+		tord_bg4.scale.y = 0.80;
+		tord_bg4.scale.x = 0.80;
+		tord_bg4.scrollFactor.set();
+		add(tord_bg4);
 
 
 
