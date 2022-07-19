@@ -164,6 +164,72 @@
 			"fps": 24,
 			"name": "bf pre attack",
 			"indices": []
+		},
+		{
+			"offsets": [
+				29,
+				-19
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "BFCOOLLEFT",
+			"loop": false,
+			"name": "BFCOOLLEFT"
+		},
+		{
+			"offsets": [
+				-5,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "BFCOOLIDLE",
+			"loop": false,
+			"name": "BFCOOLIDLE"
+		},
+		{
+			"offsets": [
+				-3,
+				4
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "COOLHEY",
+			"loop": false,
+			"name": "COOLHEY"
+		},
+		{
+			"offsets": [
+				-46,
+				28
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "BFCOOLUP",
+			"loop": false,
+			"name": "BFCOOLUP"
+		},
+		{
+			"offsets": [
+				-47,
+				-6
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "BFCOOLRIGHT",
+			"loop": false,
+			"name": "BFCOOLRIGHT"
+		},
+		{
+			"offsets": [
+				-20,
+				-50
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "BFCOOLDOWN",
+			"loop": false,
+			"name": "BFCOOLDOWN"
 		}
 	],
 	"no_antialiasing": false,
