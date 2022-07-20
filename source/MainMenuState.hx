@@ -20,6 +20,7 @@ import lime.app.Application;
 import Achievements;
 import editors.MasterEditorMenu;
 import flixel.input.keyboard.FlxKey;
+import flixel.addons.display.FlxBackdrop;
 
 using StringTools;
 
@@ -32,6 +33,8 @@ class MainMenuState extends MusicBeatState
 	private var camGame:FlxCamera;
 	private var camAchievement:FlxCamera;
 	var menuItem:FlxSprite;
+
+	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('mainmenu/Checker'), 0.2, 0.2, true, true);
 	
 	var optionShit:Array<String> = [
 		'story_mode',
@@ -69,14 +72,9 @@ class MainMenuState extends MusicBeatState
 
 		persistentUpdate = persistentDraw = true;
 
-		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
-		var bg:FlxSprite = new FlxSprite(80).loadGraphic(Paths.image('mainmenu/Checker'));
-		bg.scrollFactor.set(0, yScroll);
-		bg.setGraphicSize(Std.int(bg.width * 1.175));
-		bg.updateHitbox();
-		bg.screenCenter();
-		bg.antialiasing = ClientPrefs.globalAntialiasing;
-		add(bg);
+		add(checker);
+		checker.scrollFactor.set(0, 0.07);
+		checker.angle = 45;
 
 		var tord_bg:FlxSprite = new FlxSprite(801, 7).loadGraphic(Paths.image('mainmenu/Tord_BG'));
 		tord_bg.setGraphicSize(Std.int(515));
@@ -177,7 +175,7 @@ class MainMenuState extends MusicBeatState
 		#end
 
 		editbleSprite = menuItem;
-		editable = true;
+		editable = false;
 
 		super.create();
 	}
@@ -195,6 +193,9 @@ class MainMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+		checker.x += 1.5 / (120 / 60);
+		checker.y += 1.5 / (120 / 60);
+
 		if (FlxG.keys.pressed.SHIFT && editable)
 		{
 			editbleSprite.x = FlxG.mouse.screenX;
@@ -339,7 +340,7 @@ class MainMenuState extends MusicBeatState
 
 		menuItems.forEach(function(spr:FlxSprite)
 		{
-			//spr.screenCenter(X);
+			
 		});
 	}
 
@@ -354,18 +355,17 @@ class MainMenuState extends MusicBeatState
 
 		menuItems.forEach(function(spr:FlxSprite)
 		{
-			//spr.animation.play('idle');
 			spr.updateHitbox();
+			spr.alpha = 0.7;
 
 			if (spr.ID == curSelected)
 			{
-				//spr.animation.play('selected');
 				var add:Float = 0;
 				if(menuItems.length > 4) {
 					add = menuItems.length * 8;
 				}
-				//camFollow.setPosition(spr.getGraphicMidpoint().x, spr.getGraphicMidpoint().y - add);
 				spr.centerOffsets();
+				spr.alpha = 1;
 			}
 		});
 	}

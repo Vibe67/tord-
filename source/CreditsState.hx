@@ -93,12 +93,11 @@ class CreditsState extends MusicBeatState
 			['HugeNate', 'Nate',	'Musician', 'https://twitter.com/HugeNate_', '00FFBC'],
 			['Creepercrunch','CreeperCrunch','Musician, Bg Artist', 'https://twitter.com/creepercrunch', '37FF3E'],
 			['Moxxie', 'Moxxie', 'Bg Artist', 'https://twitter.com/Roaming_Pikachu', '475dff'],
-			['Vibe', 'vibe', 'Coder', 'https://twitter.com/Vibe_67', '301934'],
+			['Vibe', 'vibe', 'Coder, and video editor for F3 trailer', 'https://twitter.com/Vibe_67', '301934'],
 			['Scatt', 'Scatt', 'logo creator, cameo artist', 'https://twitter.com/Scatt70857891', '3730F9'],
 			['Maris', 'Maris', 'Promo art', 'https://twitter.com/Marisgameplays', '8b43dc'],
-			['JustJack', 'JustJack', 'Help with code', 'https://twitter.com/Just_Jack6', 'FAFFFF'],
+			['JustJack', 'JustJack', 'Co-coder, and menu coder', 'https://twitter.com/Just_Jack6', 'FAFFFF'],
 		
-
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',							'https://twitter.com/Shadow_Mario_',	'444444'],
 			['RiverOaken',			'riveroaken',		'Main Artist/Animator of Psych Engine',						'https://twitter.com/RiverOaken',		'C30085'],
