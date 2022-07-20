@@ -64,6 +64,7 @@ class TitleState extends MusicBeatState
 	var ngSpr:FlxSprite;
 
 	var editable:Bool = true; // DEBUG THING
+	var editbleSprite:FlxSprite;
 	var lpo:Int = 700;
 
 	var curWacky:Array<String> = [];
@@ -193,10 +194,15 @@ class TitleState extends MusicBeatState
 	}
 
 	var logoBl:FlxSprite;
+	var checker:FlxSprite;
+	var checker2:FlxSprite;
+	var checker3:FlxSprite;
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
 	var swagShader:ColorSwap = null;
+	var blackBar1:FlxSprite;
+	var blackBar2:FlxSprite;
 
 	function startIntro()
 	{
@@ -246,9 +252,35 @@ class TitleState extends MusicBeatState
 		// bg.updateHitbox();
 		add(bg);
 
+		blackBar1 = new FlxSprite(-43, -2088).makeGraphic(Std.int(FlxG.width * 3), Std.int(FlxG.height * 3), FlxColor.BLACK);
+		
+		blackBar2 = new FlxSprite(0, 637).makeGraphic(Std.int(FlxG.width * 3), Std.int(FlxG.height * 3), FlxColor.BLACK);
+		
+		// /add(blackBar2);
+
+		checker2 = new FlxSprite(-549, -92);
+		checker2.frames = Paths.getSparrowAtlas('mainmenu');
+		checker2.antialiasing = ClientPrefs.globalAntialiasing;
+		checker2.animation.addByPrefix('bump', 'Symbol 35 instance 1', 24, false);
+		checker2.animation.play('bump');
+		checker2.updateHitbox();
+		checker2.setGraphicSize(Std.int(2225));
+		checker2.antialiasing = ClientPrefs.globalAntialiasing;
+		add(checker2);
+
+		checker3 = new FlxSprite(-549, -92);
+		checker3.frames = Paths.getSparrowAtlas('mainmenu');
+		checker3.antialiasing = ClientPrefs.globalAntialiasing;
+		checker3.animation.addByPrefix('bump', 'Symbol 33 instance 1', 24, false);
+		checker3.animation.play('bump');
+		checker3.updateHitbox();
+		checker3.alpha = 0.4;
+		checker3.setGraphicSize(Std.int(2225));
+		checker3.antialiasing = ClientPrefs.globalAntialiasing;
+		add(checker3);
+
 		logoBl = new FlxSprite(7, -6);
 		logoBl.frames = Paths.getSparrowAtlas('todlogo');
-		
 		logoBl.antialiasing = ClientPrefs.globalAntialiasing;
 		logoBl.animation.addByPrefix('bump', 'todlogo', 24, false);
 		logoBl.scale.y = 0.70;
@@ -256,14 +288,22 @@ class TitleState extends MusicBeatState
 		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
 		logoBl.setGraphicSize(Std.int(bg.width * 1.175));
-
-		
 		logoBl.scale.y = 0.67;
 		logoBl.scale.x = 0.67;
 		logoBl.antialiasing = ClientPrefs.globalAntialiasing;
 		logoBl.animation.addByPrefix('bump', 'todlogo', 24, false);
 		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
+
+		checker = new FlxSprite(-450, -251);
+		checker.frames = Paths.getSparrowAtlas('mainmenu');
+		checker.antialiasing = ClientPrefs.globalAntialiasing;
+		checker.animation.addByPrefix('bump', 'Symbol 32 instance 1', 24, false);
+		checker.animation.play('bump');
+		checker.updateHitbox();
+		checker.setGraphicSize(Std.int(2225));
+		checker.antialiasing = ClientPrefs.globalAntialiasing;
+
 		// logoBl.screenCenter();
 		// logoBl.color = FlxColor.BLACK;
 
@@ -302,6 +342,10 @@ class TitleState extends MusicBeatState
 		gfDance.antialiasing = ClientPrefs.globalAntialiasing;
 		gfDance.setGraphicSize(Std.int(888.382));
 		
+		add(checker);
+		add(blackBar1);
+		add(blackBar2);
+
 		add(gfDance);
 		gfDance.shader = swagShader.shader;
 		add(logoBl);
@@ -331,6 +375,9 @@ class TitleState extends MusicBeatState
 		titleText.updateHitbox();
 		// titleText.screenCenter(X);
 		add(titleText);
+
+		editbleSprite = checker3;
+		editable = true;
 
 		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuTord'));
 		logo.screenCenter();
@@ -392,14 +439,15 @@ class TitleState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		/*if (FlxG.keys.pressed.SHIFT && editable)
+		if (FlxG.keys.pressed.SHIFT && editable)
 			{
-				logoBl.x = FlxG.mouse.screenX;
-				logoBl.y = FlxG.mouse.screenY;
+				editbleSprite.x = FlxG.mouse.screenX;
+				editbleSprite.y = FlxG.mouse.screenY;
 			}
 		else if (FlxG.keys.justPressed.C && editable)
 			{
-				trace(logoBl);
+				trace(editbleSprite);
+				trace(lpo);
 			}
 		else if (FlxG.keys.justPressed.E && editable)
 				{
@@ -407,8 +455,8 @@ class TitleState extends MusicBeatState
 						lpo += 100;
 					else
 						lpo += 15;
-					logoBl.setGraphicSize(Std.int(lpo));
-					logoBl.updateHitbox();
+					editbleSprite.setGraphicSize(Std.int(lpo));
+					editbleSprite.updateHitbox();
 				}
 		else if (FlxG.keys.justPressed.Q && editable)
 				{
@@ -416,37 +464,37 @@ class TitleState extends MusicBeatState
 						lpo -= 100;
 					else
 						lpo -= 15;
-					logoBl.setGraphicSize(Std.int(lpo));
-					logoBl.updateHitbox();
+					editbleSprite.setGraphicSize(Std.int(lpo));
+					editbleSprite.updateHitbox();
 				}
 		else if (FlxG.keys.justPressed.L && editable)
 				{
 					if (FlxG.keys.pressed.ALT)
-						logoBl.x += 50;
+						editbleSprite.x += 50;
 					else
-						logoBl.x += 1;
+						editbleSprite.x += 1;
 				}
 		else if (FlxG.keys.justPressed.K && editable)
 				{
 					if (FlxG.keys.pressed.ALT)
-						logoBl.y += 50;
+						editbleSprite.y += 50;
 					else
-						logoBl.y += 1;
+						editbleSprite.y += 1;
 				}
 		else if (FlxG.keys.justPressed.J && editable)
 				{
 					if (FlxG.keys.pressed.ALT)
-						logoBl.x -= 50;
+						editbleSprite.x -= 50;
 					else
-						logoBl.x -= 1;
+						editbleSprite.x -= 1;
 				}
 		else if (FlxG.keys.justPressed.I && editable)
 				{
 					if (FlxG.keys.pressed.ALT)
-						logoBl.y -= 50;
+						editbleSprite.y -= 50;
 					else
-						logoBl.y -= 1;
-				}*/
+						editbleSprite.y -= 1;
+				}
 
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
@@ -493,11 +541,7 @@ class TitleState extends MusicBeatState
 
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 				{
-					if (mustUpdate) {
-						MusicBeatState.switchState(new OutdatedState());
-					} else {
-						MusicBeatState.switchState(new MainMenuState());
-					}
+					MusicBeatState.switchState(new MainMenuState());
 					closedState = true;
 				});
 				// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
@@ -589,6 +633,42 @@ class TitleState extends MusicBeatState
 		}
 	}
 
+	var checkerTimer:FlxTimer;
+	var movelol:Bool = true;
+	function movecheckerboard()
+	{
+		if(checker2 != null)
+		{
+			FlxTween.tween(checker2,{x: checker2.x -684},0.5,{ease: FlxEase.expoInOut});
+			movelol = false;
+			checkerTimer = new FlxTimer().start(1, function(tmr:FlxTimer)
+			{
+				resetcheckerboard();
+				checkerTimer = null;
+			});
+		}
+	}
+
+	function resetcheckerboard():Void
+	{
+		checker2.x = -549;
+		checker2.velocity.x = 0;
+		movelol = true;
+	}
+
+	/*function moveCheckerboard()
+	{
+		if(checker2 != null)
+		{
+			FlxTween.tween(checker2,{x: checker2.x +1000},0.5,{ease: FlxEase.expoInOut, 
+			onComplete: function(twn:FlxTween)
+			{
+				checker2.x -= 1000;
+				moveCheckerboard();
+			}});
+		}
+	}*/
+
 	function deleteCoolText()
 	{
 		while (textGroup.members.length > 0)
@@ -603,6 +683,10 @@ class TitleState extends MusicBeatState
 	override function beatHit()
 	{
 		super.beatHit();
+
+		if(checker2 != null && movelol) {
+			movecheckerboard();
+		}
 
 		if(logoBl != null) 
 			logoBl.animation.play('bump', true);

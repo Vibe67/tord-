@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="mainmenu.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Symbol 32 instance 10000" x="100" y="100" width="2567" height="1291"/>
+	<SubTexture name="Symbol 33 instance 10000" x="2767" y="100" width="2521" height="1209"/>
+	<SubTexture name="Symbol 35 instance 10000" x="100" y="1491" width="3119" height="1200"/>
+</TextureAtlas>
