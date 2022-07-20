@@ -252,13 +252,15 @@ class TitleState extends MusicBeatState
 		// bg.updateHitbox();
 		add(bg);
 
-		blackBar1 = new FlxSprite(-43, -2088).makeGraphic(Std.int(FlxG.width * 3), Std.int(FlxG.height * 3), FlxColor.BLACK);
+		blackBar1 = new FlxSprite(-46, -2088).makeGraphic(Std.int(FlxG.width * 3), Std.int(FlxG.height * 3), FlxColor.BLACK);
+		blackBar1.angle = -2.3;
 		
-		blackBar2 = new FlxSprite(0, 637).makeGraphic(Std.int(FlxG.width * 3), Std.int(FlxG.height * 3), FlxColor.BLACK);
+		blackBar2 = new FlxSprite(0, 587).makeGraphic(Std.int(FlxG.width * 3), Std.int(FlxG.height * 3), FlxColor.BLACK);
+		blackBar2.angle = -2.3;
 		
 		// /add(blackBar2);
 
-		checker2 = new FlxSprite(-549, -92);
+		checker2 = new FlxSprite(-949, -92);
 		checker2.frames = Paths.getSparrowAtlas('mainmenu');
 		checker2.antialiasing = ClientPrefs.globalAntialiasing;
 		checker2.animation.addByPrefix('bump', 'Symbol 35 instance 1', 24, false);
@@ -295,13 +297,13 @@ class TitleState extends MusicBeatState
 		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
 
-		checker = new FlxSprite(-450, -251);
+		checker = new FlxSprite(-654, -251);
 		checker.frames = Paths.getSparrowAtlas('mainmenu');
 		checker.antialiasing = ClientPrefs.globalAntialiasing;
 		checker.animation.addByPrefix('bump', 'Symbol 32 instance 1', 24, false);
 		checker.animation.play('bump');
 		checker.updateHitbox();
-		checker.setGraphicSize(Std.int(2225));
+		checker.setGraphicSize(Std.int(1705));
 		checker.antialiasing = ClientPrefs.globalAntialiasing;
 
 		// logoBl.screenCenter();
@@ -376,7 +378,7 @@ class TitleState extends MusicBeatState
 		// titleText.screenCenter(X);
 		add(titleText);
 
-		editbleSprite = checker3;
+		editbleSprite = checker2;
 		editable = true;
 
 		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuTord'));
@@ -639,7 +641,7 @@ class TitleState extends MusicBeatState
 	{
 		if(checker2 != null)
 		{
-			FlxTween.tween(checker2,{x: checker2.x -684},0.5,{ease: FlxEase.expoInOut});
+			FlxTween.tween(checker2,{x: checker2.x +684},0.5,{ease: FlxEase.expoInOut});
 			movelol = false;
 			checkerTimer = new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
@@ -651,7 +653,7 @@ class TitleState extends MusicBeatState
 
 	function resetcheckerboard():Void
 	{
-		checker2.x = -549;
+		checker2.x = -1349;
 		checker2.velocity.x = 0;
 		movelol = true;
 	}
