@@ -276,7 +276,7 @@ class TitleState extends MusicBeatState
 		checker3.animation.addByPrefix('bump', 'Symbol 33 instance 1', 24, false);
 		checker3.animation.play('bump');
 		checker3.updateHitbox();
-		checker3.alpha = 0.4;
+		checker3.alpha = 0.9;
 		checker3.setGraphicSize(Std.int(2225));
 		checker3.antialiasing = ClientPrefs.globalAntialiasing;
 		add(checker3);
