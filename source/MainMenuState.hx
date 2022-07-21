@@ -33,6 +33,8 @@ class MainMenuState extends MusicBeatState
 	private var camGame:FlxCamera;
 	private var camAchievement:FlxCamera;
 	var menuItem:FlxSprite;
+	var time:Float = 0;
+	var tord:FlxSprite;
 
 	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('mainmenu/Checker'), 0.2, 0.2, true, true);
 	
@@ -141,12 +143,10 @@ class MainMenuState extends MusicBeatState
 			menuItem.updateHitbox();
 		}
 
-		var tord:FlxSprite = new FlxSprite(765, -10).loadGraphic(Paths.image('mainmenu/Tord'));
+		tord = new FlxSprite(765, -10).loadGraphic(Paths.image('mainmenu/Tord'));
 		tord.setGraphicSize(Std.int(550));
 		tord.updateHitbox();
 		add(tord);
-
-		FlxTween.tween(tord,{y: tord.y -15}, 1.5, {type:FlxTween.PINGPONG});
 
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
 		versionShit.scrollFactor.set();
@@ -337,6 +337,10 @@ class MainMenuState extends MusicBeatState
 		}
 
 		super.update(elapsed);
+
+		time += FlxG.elapsed;
+
+		tord.y = (FlxMath.fastSin(time * 1.5) * 10);
 
 		menuItems.forEach(function(spr:FlxSprite)
 		{
