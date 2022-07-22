@@ -185,6 +185,7 @@ class PlayState extends MusicBeatState
 	public var camGame:FlxCamera;
 	public var camOther:FlxCamera;
 	public var cameraSpeed:Float = 1;
+	private var meta:SongMetaTags;
 
 	var dialogue:Array<String> = ['blah blah blah', 'coolswag'];
 	var dialogueJson:DialogueFile = null;
@@ -1027,6 +1028,20 @@ class PlayState extends MusicBeatState
 		FlxG.fixedTimestep = false;
 		moveCameraSection(0);
 
+		if(Assets.exists(Paths.txt(SONG.song.toLowerCase() + "/creds"))){
+			switch (PlayState.SONG.song.toLowerCase())
+			{
+				case 'tanets':
+					meta = new SongMetaTags(0, 144, SONG.song.toLowerCase(), 'kalpy');
+				case 'kickass':
+					meta = new SongMetaTags(0, 144, SONG.song.toLowerCase(), 'MOTE');
+				case 'leader':
+					meta = new SongMetaTags(0, 144, SONG.song.toLowerCase(), 'Nate');
+			}
+			meta.cameras = [camHUD];
+			add(meta);
+		}
+
 		healthBarBG = new AttachedSprite('healthBar');
 		healthBarBG.y = FlxG.height * 0.89;
 		healthBarBG.screenCenter(X);
@@ -1612,6 +1627,9 @@ class PlayState extends MusicBeatState
 				{
 					case 0:
 						FlxG.sound.play(Paths.sound('intro3' + introSoundsSuffix), 0.6);
+						if(meta != null){
+							meta.start();
+						}
 					case 1:
 						countdownReady = new FlxSprite().loadGraphic(Paths.image(introAlts[0]));
 						countdownReady.scrollFactor.set();

@@ -385,11 +385,6 @@ class MainMenuState extends MusicBeatState
 		time += FlxG.elapsed;
 
 		tord.y = (FlxMath.fastSin(time * 1.5) * 9);
-
-		menuItems.forEach(function(spr:FlxSprite)
-		{
-			
-		});
 	}
 
 	function changeItem(huh:Int = 0)
