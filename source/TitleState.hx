@@ -27,6 +27,7 @@ import flixel.input.gamepad.FlxGamepad;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.system.FlxSound;
+import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.system.ui.FlxSoundTray;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
@@ -83,6 +84,29 @@ class TitleState extends MusicBeatState
 	var mustUpdate:Bool = false;
 	
 	public static var updateVersion:String = '';
+
+	var funnies:FlxSprite;
+	var funnies2:FlxSprite;
+    var assetGroup:FlxTypedGroup<FlxSprite>;
+
+	var assets:Array<String> = [
+		'Burguer', 
+		'tzenzoule',
+		'kalpy', 
+		'OrbyNaut',
+		'Viva',
+		'MOTE',
+		'Nate',
+	];
+
+	var assets2:Array<String> = [
+		'Moxxie', 
+		'nautical',
+		'vibe', 
+		'scatt',
+		'maris',
+		'JustJack',
+	];
 
 	override public function create():Void
 	{
@@ -391,6 +415,8 @@ class TitleState extends MusicBeatState
 
 		credGroup = new FlxGroup();
 		add(credGroup);
+		assetGroup = new FlxTypedGroup<FlxSprite>();
+		add(assetGroup);
 		textGroup = new FlxGroup();
 
 		blackScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
@@ -402,6 +428,26 @@ class TitleState extends MusicBeatState
 		// credTextShit.alignment = CENTER;
 
 		credTextShit.visible = false;
+
+		for (i in 0...assets.length)
+		{ 
+			funnies = new FlxSprite((i * 160) + 77, 334).loadGraphic(Paths.image('credits/' + assets[i]));
+			funnies.setGraphicSize(Std.int(140));
+			funnies.updateHitbox();
+			funnies.ID = i;
+			assetGroup.add(funnies);
+		}
+
+		for (i in 0...assets2.length)
+		{ 
+			funnies2 = new FlxSprite((i * 160) + 137, 504).loadGraphic(Paths.image('credits/' + assets2[i]));
+			funnies2.setGraphicSize(Std.int(140));
+			funnies2.updateHitbox();
+			funnies2.ID = i;
+			assetGroup.add(funnies2);
+		}
+
+		assetGroup.visible = false;
 
 		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
 		add(ngSpr);
@@ -722,10 +768,11 @@ class TitleState extends MusicBeatState
 					createCoolText(['In association', 'with'], -40);
 				case 6:
 					addMoreText('A bunch of cool ass people', -40);
-					//ngSpr.visible = true;
+					assetGroup.visible = true;
 				// credTextShit.text += '\nNewgrounds';
 				case 8:
 					deleteCoolText();
+					assetGroup.visible = false;
 					//ngSpr.visible = false;
 				// credTextShit.visible = false;
 

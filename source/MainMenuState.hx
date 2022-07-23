@@ -359,7 +359,7 @@ class MainMenuState extends MusicBeatState
 												FreeplayState.destroyFreeplayVocals();
 											});
 										case 'freeplay':
-											MusicBeatState.switchState(new FreeplayState());
+											MusicBeatState.switchState(new AssetTest());
 										case 'credits':
 											MusicBeatState.switchState(new CreditsState());
 										case 'options':
