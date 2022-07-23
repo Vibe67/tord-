@@ -122,6 +122,10 @@ class PlayState extends MusicBeatState
 
 	public var vocals:FlxSound;
 
+	var editable:Bool = true; // DEBUG THING
+	var editbleSprite:FlxSprite;
+	var lpo:Int = 700;
+
 	public var dad:Character = null;
 	public var gf:Character = null;
 	public var boyfriend:Boyfriend = null;
@@ -153,6 +157,9 @@ class PlayState extends MusicBeatState
 	private var healthBarBG:AttachedSprite;
 	public var healthBar:FlxBar;
 	var songPercent:Float = 0;
+
+	var blackBar1:FlxSprite;
+	var blackBar2:FlxSprite;
 
 	private var timeBarBG:AttachedSprite;
 	public var timeBar:FlxBar;
@@ -508,26 +515,36 @@ class PlayState extends MusicBeatState
 				add(street);
 
 				case 'tord':
-
 					var skyBG:BGSprite = new BGSprite('bg/sky', -520, -340);
 					skyBG.scale.y = 0.80;
 					skyBG.scale.x = 0.80;
-					add(skyBG)
+					add(skyBG);
+					
+					var newb:BGSprite = new BGSprite('bg/buildings back', -640, -250);
+					newb.scale.y = 0.99;
+					newb.scale.x = 0.99;
+					add(newb);
+					
+					var newb:BGSprite = new BGSprite('bg/buildings front',-740, -70);
+					newb.scale.y = 0.99;
+					newb.scale.x = 0.99;
+					add(newb);
 
-			;var newb:BGSprite = new BGSprite('bg/buildings back', -640, -250);
-			newb.scale.y = 0.99;
-			newb.scale.x = 0.99;
-			add(newb)
-	
-				 ;var newb:BGSprite = new BGSprite('bg/buildings front',-740, -70);
-				 newb.scale.y = 0.99;
-				 newb.scale.x = 0.99;
-				 add(newb)
+					var newb:BGSprite = new BGSprite('bg/foreground', -410, -390);
+					newb.scale.y = 0.99;
+					newb.scale.x = 0.99;
+					add(newb);
 
-					;var newb:BGSprite = new BGSprite('bg/foreground', -410, -390);
-					 newb.scale.y = 0.99;
-					 newb.scale.x = 0.99;
-			add(newb);
+					blackBar1 = new FlxSprite(-140, -2175).makeGraphic(Std.int(FlxG.width * 3), Std.int(FlxG.height * 3), FlxColor.BLACK);
+					blackBar1.cameras = [camHUD];
+					add(blackBar1);
+					
+					blackBar2 = new FlxSprite(0, 719).makeGraphic(Std.int(FlxG.width * 3), Std.int(FlxG.height * 3), FlxColor.BLACK);
+					blackBar2.cameras = [camHUD];
+					add(blackBar2);
+
+					editbleSprite = blackBar2;
+					editable = true;
 
 			case 'limo': //Week 4
 				var skyBG:BGSprite = new BGSprite('limo/limoSunset', -120, -50, 0.1, 0.1);
@@ -1631,6 +1648,8 @@ class PlayState extends MusicBeatState
 							meta.start();
 						}
 					case 1:
+						FlxTween.tween(blackBar1,{y: blackBar1.y +100}, 1 ,{ease: FlxEase.expoInOut});
+						FlxTween.tween(blackBar2,{y: blackBar2.y -100}, 1,{ease: FlxEase.expoInOut});
 						countdownReady = new FlxSprite().loadGraphic(Paths.image(introAlts[0]));
 						countdownReady.scrollFactor.set();
 						countdownReady.updateHitbox();
@@ -2222,6 +2241,63 @@ class PlayState extends MusicBeatState
 		{
 			iconP1.swapOldIcon();
 		}*/
+
+		if (FlxG.keys.pressed.SHIFT && editable)
+			{
+				editbleSprite.x = FlxG.mouse.screenX;
+				editbleSprite.y = FlxG.mouse.screenY;
+			}
+		else if (FlxG.keys.justPressed.C && editable)
+			{
+				trace(editbleSprite);
+				trace(lpo);
+			}
+		else if (FlxG.keys.justPressed.E && editable)
+				{
+					if (FlxG.keys.pressed.ALT)
+						lpo += 100;
+					else
+						lpo += 15;
+					editbleSprite.setGraphicSize(Std.int(lpo));
+					editbleSprite.updateHitbox();
+				}
+		else if (FlxG.keys.justPressed.Q && editable)
+				{
+					if (FlxG.keys.pressed.ALT)
+						lpo -= 100;
+					else
+						lpo -= 15;
+					editbleSprite.setGraphicSize(Std.int(lpo));
+					editbleSprite.updateHitbox();
+				}
+		else if (FlxG.keys.justPressed.L && editable)
+				{
+					if (FlxG.keys.pressed.ALT)
+						editbleSprite.x += 50;
+					else
+						editbleSprite.x += 1;
+				}
+		else if (FlxG.keys.justPressed.K && editable)
+				{
+					if (FlxG.keys.pressed.ALT)
+						editbleSprite.y += 50;
+					else
+						editbleSprite.y += 1;
+				}
+		else if (FlxG.keys.justPressed.J && editable)
+				{
+					if (FlxG.keys.pressed.ALT)
+						editbleSprite.x -= 50;
+					else
+						editbleSprite.x -= 1;
+				}
+		else if (FlxG.keys.justPressed.I && editable)
+				{
+					if (FlxG.keys.pressed.ALT)
+						editbleSprite.y -= 50;
+					else
+						editbleSprite.y -= 1;
+				}
 
 		callOnLuas('onUpdate', [elapsed]);
 
@@ -3287,7 +3363,7 @@ class PlayState extends MusicBeatState
 
 				if (storyPlaylist.length <= 0)
 				{
-					FlxG.sound.playMusic(Paths.music('freakyMenu'));
+					FlxG.sound.playMusic(Paths.inst('tanets'), 1, false);
 
 					cancelMusicFadeTween();
 					if(FlxTransitionableState.skipNextTransIn) {
@@ -3356,7 +3432,7 @@ class PlayState extends MusicBeatState
 					CustomFadeTransition.nextCamera = null;
 				}
 				MusicBeatState.switchState(new FreeplayState());
-				FlxG.sound.playMusic(Paths.music('freakyMenu'));
+				FlxG.sound.playMusic(Paths.inst('tanets'), 1, false);
 				changedDifficulty = false;
 			}
 			transitioning = true;
