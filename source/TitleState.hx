@@ -739,6 +739,11 @@ class TitleState extends MusicBeatState
 		if(checker2 != null && movelol) {
 			movecheckerboard();
 		}
+		
+		if (!stopdointhatshit)
+		{
+			FlxTween.tween(FlxG.camera, {zoom:1.05}, 0.3, {ease: FlxEase.quadOut, type: BACKWARD});
+		}
 
 		if(logoBl != null) 
 			logoBl.animation.play('bump', true);
@@ -809,6 +814,7 @@ class TitleState extends MusicBeatState
 				case 26:
 					addMoreText('Tord Mod'); // credTextShit.text += '\nFunkin';
 				case 28:
+					stopdointhatshit = true;
 					deleteCoolText();
 				case 29:
 					FlxTween.tween(blackScreen,{y: blackScreen.y -1000},0.8,{ease: FlxEase.expoInOut});
@@ -820,6 +826,7 @@ class TitleState extends MusicBeatState
 
 	var skippedIntro:Bool = false;
 	var increaseVolume:Bool = false;
+	var stopdointhatshit:Bool = false;
 	function skipIntro():Void
 	{
 		if (!skippedIntro)
