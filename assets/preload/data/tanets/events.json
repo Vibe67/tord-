@@ -1,0 +1,170 @@
+{
+	"song": {
+		"speed": 2.6,
+		"stage": "tord",
+		"player1": "coolbf",
+		"player2": "Tord-FLA",
+		"player3": null,
+		"events": [
+			[
+				0,
+				[
+					[
+						"Update DefaultCamZoom",
+						"1",
+						""
+					]
+				],
+				null,
+				""
+			],
+			[
+				17943.9252336449,
+				[
+					[
+						"Update DefaultCamZoom",
+						"0.9",
+						""
+					]
+				],
+				null,
+				""
+			],
+			[
+				54392.523364486,
+				[
+					[
+						"Add Camera Zoom",
+						"",
+						""
+					]
+				]
+			],
+			[
+				55514.0186915888,
+				[
+					[
+						"Add Camera Zoom",
+						"",
+						""
+					]
+				]
+			],
+			[
+				55794.3925233645,
+				[
+					[
+						"Add Camera Zoom",
+						"",
+						""
+					]
+				]
+			],
+			[
+				56635.5140186916,
+				[
+					[
+						"Add Camera Zoom",
+						"",
+						""
+					]
+				]
+			],
+			[
+				56915.8878504673,
+				[
+					[
+						"Add Camera Zoom",
+						"",
+						""
+					]
+				]
+			],
+			[
+				58317.7570093458,
+				[
+					[
+						"Add Camera Zoom",
+						"",
+						""
+					]
+				]
+			],
+			[
+				58878.5046728972,
+				[
+					[
+						"Add Camera Zoom",
+						"",
+						""
+					]
+				]
+			],
+			[
+				60000,
+				[
+					[
+						"Add Camera Zoom",
+						"",
+						""
+					]
+				]
+			],
+			[
+				60280.3738317757,
+				[
+					[
+						"Add Camera Zoom",
+						"",
+						""
+					]
+				]
+			],
+			[
+				61121.4953271028,
+				[
+					[
+						"Add Camera Zoom",
+						"",
+						""
+					]
+				]
+			],
+			[
+				61401.8691588785,
+				[
+					[
+						"Add Camera Zoom",
+						"",
+						""
+					]
+				]
+			],
+			[
+				62803.738317757,
+				[
+					[
+						"Add Camera Zoom",
+						"",
+						""
+					],
+					[
+						"superzoomshit",
+						"",
+						""
+					]
+				],
+				null,
+				""
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "gf",
+		"bpm": 107,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "tanets"
+	}
+}

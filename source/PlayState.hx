@@ -108,6 +108,7 @@ class PlayState extends MusicBeatState
 	public var songSpeed(default, set):Float = 1;
 	public var songSpeedType:String = "multiplicative";
 	public var noteKillOffset:Float = 350;
+	var stageData:StageFile;
 	
 	public var boyfriendGroup:FlxSpriteGroup;
 	public var dadGroup:FlxSpriteGroup;
@@ -135,6 +136,7 @@ class PlayState extends MusicBeatState
 	public var eventNotes:Array<EventNote> = [];
 
 	private var strumLine:FlxSprite;
+	public var supersuperZoomShit:Bool = false;
 
 	//Handles the new epic mega sexy cam code that i've done
 	private var camFollow:FlxPoint;
@@ -385,7 +387,7 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		var stageData:StageFile = StageData.getStageFile(curStage);
+		stageData = StageData.getStageFile(curStage);
 		if(stageData == null) { //Stage couldn't be found, create a dummy stage for preventing a crash
 			stageData = {
 				directory: "",
@@ -3182,6 +3184,18 @@ class PlayState extends MusicBeatState
 						}
 					});
 				}
+
+			case 'Update DefaultCamZoom':
+				var sexWithChildren:Float = Std.parseFloat(value1);
+				if(Math.isNaN(sexWithChildren)) sexWithChildren = 0.9;
+
+				if (Math.isNaN(Std.parseFloat(value1)))
+					defaultCamZoom = stageData.defaultZoom;
+				else
+					defaultCamZoom = sexWithChildren;
+
+			case 'superzoomshit':
+				supersuperZoomShit = !supersuperZoomShit;
 		}
 		callOnLuas('onEvent', [eventName, value1, value2]);
 	}
@@ -4055,8 +4069,14 @@ class PlayState extends MusicBeatState
 
 			if(!note.noAnimation) {
 				var daAlt = '';
-				if(note.noteType == 'Alt Animation') daAlt = '-alt';
-	
+				var curSection:Int = Math.floor(curStep / 16);
+				if (SONG.notes[curSection] != null)
+				{
+					if (SONG.notes[curSection].altAnim || note.noteType == 'Alt Animation') {
+						daAlt = '-alt';
+					}
+				}
+
 				var animToPlay:String = singAnimations[Std.int(Math.abs(note.noteData))];
 
 				if(note.gfNote) 
@@ -4369,6 +4389,12 @@ class PlayState extends MusicBeatState
 	override function beatHit()
 	{
 		super.beatHit();
+
+		if (curBeat % 1 == 0 && supersuperZoomShit)
+		{
+			FlxG.camera.zoom += 0.06;
+			camHUD.zoom += 0.08;
+		}
 
 		if(lastBeatHit >= curBeat) {
 			//trace('BEAT HIT: ' + curBeat + ', LAST HIT: ' + lastBeatHit);
