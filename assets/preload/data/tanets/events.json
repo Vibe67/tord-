@@ -11,7 +11,7 @@
 				[
 					[
 						"Update DefaultCamZoom",
-						"1",
+						"1.1",
 						""
 					]
 				],
@@ -34,8 +34,8 @@
 				54392.523364486,
 				[
 					[
-						"Add Camera Zoom",
-						"",
+						"Update DefaultCamZoom",
+						"1",
 						""
 					]
 				]
@@ -44,18 +44,20 @@
 				55514.0186915888,
 				[
 					[
-						"Add Camera Zoom",
-						"",
+						"Update DefaultCamZoom",
+						"1.05",
 						""
 					]
-				]
+				],
+				null,
+				""
 			],
 			[
 				55794.3925233645,
 				[
 					[
-						"Add Camera Zoom",
-						"",
+						"Update DefaultCamZoom",
+						"1.1",
 						""
 					]
 				]
@@ -64,18 +66,20 @@
 				56635.5140186916,
 				[
 					[
-						"Add Camera Zoom",
-						"",
+						"Update DefaultCamZoom",
+						"1.2",
 						""
 					]
-				]
+				],
+				null,
+				""
 			],
 			[
 				56915.8878504673,
 				[
 					[
-						"Add Camera Zoom",
-						"",
+						"Update DefaultCamZoom",
+						"1.3",
 						""
 					]
 				]
@@ -84,7 +88,7 @@
 				58317.7570093458,
 				[
 					[
-						"Add Camera Zoom",
+						"Update DefaultCamZoom",
 						"",
 						""
 					]
@@ -94,8 +98,8 @@
 				58878.5046728972,
 				[
 					[
-						"Add Camera Zoom",
-						"",
+						"Update DefaultCamZoom",
+						"1",
 						""
 					]
 				]
@@ -104,8 +108,8 @@
 				60000,
 				[
 					[
-						"Add Camera Zoom",
-						"",
+						"Update DefaultCamZoom",
+						"1.05",
 						""
 					]
 				]
@@ -114,8 +118,8 @@
 				60280.3738317757,
 				[
 					[
-						"Add Camera Zoom",
-						"",
+						"Update DefaultCamZoom",
+						"1.1",
 						""
 					]
 				]
@@ -124,8 +128,8 @@
 				61121.4953271028,
 				[
 					[
-						"Add Camera Zoom",
-						"",
+						"Update DefaultCamZoom",
+						"1.2",
 						""
 					]
 				]
@@ -134,8 +138,8 @@
 				61401.8691588785,
 				[
 					[
-						"Add Camera Zoom",
-						"",
+						"Update DefaultCamZoom",
+						"1.3 ",
 						""
 					]
 				]
@@ -144,10 +148,15 @@
 				62803.738317757,
 				[
 					[
-						"Add Camera Zoom",
+						"Update DefaultCamZoom",
 						"",
 						""
-					],
+					]
+				]
+			],
+			[
+				71775.7009345794,
+				[
 					[
 						"superzoomshit",
 						"",
@@ -156,6 +165,183 @@
 				],
 				null,
 				""
+			],
+			[
+				85093.4579439252,
+				[
+					[
+						"superzoomshit",
+						"",
+						""
+					]
+				]
+			],
+			[
+				85233.6448598131,
+				[
+					[
+						"Camera Follow Pos",
+						"630",
+						"350"
+					],
+					[
+						"Update DefaultCamZoom",
+						"0.8",
+						""
+					]
+				],
+				null,
+				""
+			],
+			[
+				89719.6261682243,
+				[
+					[
+						"Update DefaultCamZoom",
+						"0.9",
+						""
+					]
+				]
+			],
+			[
+				90000,
+				[
+					[
+						"Camera Follow Pos",
+						"440",
+						"300"
+					]
+				]
+			],
+			[
+				90841.1214953271,
+				[
+					[
+						"Camera Follow Pos",
+						"770",
+						"400"
+					]
+				]
+			],
+			[
+				91962.6168224299,
+				[
+					[
+						"Camera Follow Pos",
+						"440",
+						"300"
+					]
+				]
+			],
+			[
+				93084.1121495327,
+				[
+					[
+						"Camera Follow Pos",
+						"770",
+						"400"
+					]
+				]
+			],
+			[
+				94485.9813084112,
+				[
+					[
+						"Camera Follow Pos",
+						"440",
+						"300"
+					]
+				],
+				null,
+				""
+			],
+			[
+				95607.476635514,
+				[
+					[
+						"Camera Follow Pos",
+						"770",
+						"400"
+					]
+				],
+				null,
+				""
+			],
+			[
+				95887.8504672898,
+				[
+					[
+						"Camera Follow Pos",
+						"440",
+						"300"
+					]
+				]
+			],
+			[
+				96448.5981308412,
+				[
+					[
+						"Camera Follow Pos",
+						"440",
+						"300"
+					]
+				],
+				null,
+				""
+			],
+			[
+				97570.093457944,
+				[
+					[
+						"Camera Follow Pos",
+						"770",
+						"400"
+					]
+				],
+				null,
+				""
+			],
+			[
+				98691.5887850468,
+				[
+					[
+						"Camera Follow Pos",
+						"440",
+						"300"
+					]
+				]
+			],
+			[
+				102837.61682243,
+				[
+					[
+						"Update DefaultCamZoom",
+						"1.1",
+						""
+					]
+				],
+				null,
+				""
+			],
+			[
+				103153.037383178,
+				[
+					[
+						"Camera Follow Pos",
+						"770",
+						"400"
+					]
+				]
+			],
+			[
+				103177.570093458,
+				[
+					[
+						"Update DefaultCamZoom",
+						"0.9",
+						""
+					]
+				]
 			]
 		],
 		"notes": [],

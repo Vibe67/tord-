@@ -4373,6 +4373,17 @@ class PlayState extends MusicBeatState
 			return;
 		}
 
+		if (SONG.song.toLowerCase() == 'tanets')
+		{
+			switch (curStep)
+			{
+				case 511:
+					supersuperZoomShit = true;
+				case 606:
+					supersuperZoomShit = false;
+			}
+		}
+
 		lastStepHit = curStep;
 		setOnLuas('curStep', curStep);
 		callOnLuas('onStepHit', []);
