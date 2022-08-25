@@ -95,7 +95,7 @@ class CreditsState extends MusicBeatState
 			['Vibe', 'vibe', 'Coder, and video editor for F3 trailer', 'https://twitter.com/Vibe_67', '301934'],
 			['Scatt', 'scatt', 'logo creator, cameo artist', 'https://twitter.com/Scatt70857891', '3730F9'],
 			['Maris', 'maris', 'Promo art', 'https://twitter.com/Marisgameplays', '8b43dc'],
-			['JustJack', 'JustJack', 'Co-coder, and menu coder', 'https://twitter.com/Just_Jack6', 'FAFFFF'],
+			['JustJack', 'JustJack', 'Coder, and menu coder', 'https://twitter.com/Just_Jack6', 'FAFFFF'],
 		
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',							'https://twitter.com/Shadow_Mario_',	'444444'],
