@@ -1,5 +1,6 @@
 package;
 
+import openfl.utils.AssetCache;
 import animateatlas.AtlasFrameMaker;
 import flixel.math.FlxPoint;
 import flixel.graphics.frames.FlxFrame.FlxFrameAngle;
@@ -28,6 +29,7 @@ class Paths
 {
 	inline public static var SOUND_EXT = #if web "mp3" #else "ogg" #end;
 	inline public static var VIDEO_EXT = "mp4";
+	public static var cache = new AssetCache();
 
 	#if MODS_ALLOWED
 	public static var ignoreModFolders:Array<String> = [
@@ -61,8 +63,20 @@ class Paths
 		'assets/shared/music/tea-time.$SOUND_EXT',
 	];
 	/// haya I love you for the base cache dump I took to the max
+	public static var cachedShit:Array<String> = [];
 	public static function clearUnusedMemory() {
 		// clear non local assets in the tracked assets list
+		var dumb:Array<String> =  [];
+		for (key in currentTrackedAssets.keys()) {
+			for (i in 0...cachedShit.length) {
+				if (cachedShit[i].contains(key)) {
+					dumb.push(key);
+				} // else {
+				// 	//trace(key + ' does not exist in cache.');
+				// }
+			}
+		}
+
 		for (key in currentTrackedAssets.keys()) {
 			// if it is not currently contained within the used local assets
 			if (!localTrackedAssets.contains(key) 
@@ -325,10 +339,52 @@ class Paths
 	inline static public function formatToSongPath(path:String) {
 		return path.toLowerCase().replace(' ', '-');
 	}
+	public static function getCachedBitmap(id:String) {
+		#if !html5
+		if (!cache.hasBitmapData(id))
+			trace("id does not exist: " + id);
+		if (cache.hasBitmapData(id))
+			return cache.getBitmapData(id);
+		else 
+			return null;
+		#else
+		return BitmapData.fromFile(id);
+		#end
+	}
 
 	// completely rewritten asset loading? fuck!
+	public static var cachedAsses:Map<String, FlxGraphic> = [];
 	public static var currentTrackedAssets:Map<String, FlxGraphic> = [];
 	public static function returnGraphic(key:String, ?library:String) {
+		if (cachedAsses.exists('assets/'+library+'/images/' + key + ".png")) {
+			// trace("returning cached asset: " + 'assets/'+library+'/images/' + key + ".png");
+			return cachedAsses.get('assets/'+library+'/images/' + key + ".png");
+		} else {
+			if (cache.hasBitmapData('assets/'+ library + '/images/' + key + ".png")) {
+				var uhh:FlxGraphic = FlxGraphic.fromBitmapData(getCachedBitmap('assets/'+library+'/images/' + key + ".png"));
+				if (uhh != null) {
+					uhh.persist = true;
+					cachedAsses.set('assets/'+library+'/images/' + key + ".png", uhh);
+					// trace("New asset has been set with ID: " + 'assets/'+ library + '/images/' + key + '.png');
+					return uhh;
+				}
+			}
+		}
+
+		if (cachedAsses.exists('assets/images/' + key + ".png")) {
+			// trace("returning cached asset: " + 'assets/images/' + key + ".png");
+			return cachedAsses.get('assets/images/' + key + ".png");
+		} else {
+			if (cache.hasBitmapData('assets/images/' + key + ".png")) {
+				var uhh:FlxGraphic = FlxGraphic.fromBitmapData(getCachedBitmap('assets/images/' + key + ".png"));
+				if (uhh != null) {
+					cachedAsses.set('assets/images/' + key + ".png", uhh);
+					trace("New asset has been set with ID: " + 'assets/images/' + key + '.png');
+					return uhh;
+				}
+			}
+		}
+		
 		#if MODS_ALLOWED
 		var modKey:String = modsImages(key);
 		if(FileSystem.exists(modKey)) {
