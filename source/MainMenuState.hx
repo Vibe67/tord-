@@ -37,7 +37,7 @@ class MainMenuState extends MusicBeatState
 	var time:Float = 0;
 	var tord:FlxSprite;
 
-	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('mainmenu/Checker'), 0.2, 0.2, true, true);
+	var checker:FlxBackdrop;
 	
 	var optionShit:Array<String> = [
 		'story_mode',
@@ -78,6 +78,12 @@ class MainMenuState extends MusicBeatState
 
 		persistentUpdate = persistentDraw = true;
 
+		if (FlxG.random.bool(10))
+		{
+			checker = new FlxBackdrop(Paths.image('mainmenu/sex'), 0.2, 0.2, true, true);
+		} else {
+			checker = new FlxBackdrop(Paths.image('mainmenu/Checker'), 0.2, 0.2, true, true);
+		}
 		add(checker);
 		checker.scrollFactor.set(0, 0.07);
 		checker.angle = 45;
