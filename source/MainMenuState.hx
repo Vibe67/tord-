@@ -22,12 +22,13 @@ import Achievements;
 import editors.MasterEditorMenu;
 import flixel.input.keyboard.FlxKey;
 import flixel.addons.display.FlxBackdrop;
+import WeekData;
 
 using StringTools;
 
 class MainMenuState extends MusicBeatState
 {
-	public static var psychEngineVersion:String = '0.5.2h'; //This is also used for Discord RPC
+	public static var psychEngineVersion:String = 'Tord Mod'; //This is also used for Discord RPC
 	public static var curSelected:Int = 0;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
@@ -65,6 +66,7 @@ class MainMenuState extends MusicBeatState
 		#end
 		debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 
+		WeekData.reloadWeekFiles(true);
 		camGame = new FlxCamera();
 		camAchievement = new FlxCamera();
 		camAchievement.bgColor.alpha = 0;
@@ -161,7 +163,7 @@ class MainMenuState extends MusicBeatState
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 64, 0, "Psych Engine v" + psychEngineVersion, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(versionShit);
+		//add(versionShit);
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Friday Night Funkin' v" + Application.current.meta.get('version'), 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -339,20 +341,22 @@ class MainMenuState extends MusicBeatState
 									switch (daChoice)
 									{
 										case 'story_mode':
+											var songArray:Array<String> = [];
+											var leWeek:Array<Dynamic> = WeekData.weeksLoaded.get(WeekData.weeksList[0]).songs;
+											for (i in 0...leWeek.length) {
+												songArray.push(leWeek[i][0]);
+											}
+								
 											// Nevermind that's stupid lmao
-											PlayState.storyPlaylist = [
-												"tanets",
-												"kickass",
-												"leader",
-											];		
+											PlayState.storyPlaylist = songArray;
 											PlayState.isStoryMode = true;
 								
-											var diffic = '-hard';
-											if(diffic == null) diffic = '-hard';
+											var diffic = CoolUtil.defaultDifficulties[2];
+											if(diffic == null) diffic = 'hard';
 								
 											PlayState.storyDifficulty = 2;
 								
-											PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
+											PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + '-' + diffic, PlayState.storyPlaylist[0].toLowerCase());
 											PlayState.storyWeek = 0;
 											PlayState.campaignScore = 0;
 											PlayState.campaignMisses = 0;
